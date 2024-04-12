@@ -3,16 +3,11 @@ package com.devsuperior.ClientAPI.services;
 import com.devsuperior.ClientAPI.dto.ClientDTO;
 import com.devsuperior.ClientAPI.entities.Client;
 import com.devsuperior.ClientAPI.repositories.ClientRepository;
-import jakarta.persistence.Column;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.time.LocalDate;
-import java.util.List;
 
 @Service
 public class ClientService {
@@ -35,12 +30,21 @@ public class ClientService {
     @Transactional
     public ClientDTO insert(ClientDTO dto) {
         Client entity = new Client();
-        convertDtoToEntit(dto, entity);
+        convertDtoToEntity(dto, entity);
         entity = repository.save(entity);
         return new ClientDTO(entity);
     }
 
-    private void convertDtoToEntit(ClientDTO dto, Client client) {
+    @Transactional
+    public ClientDTO update(Long id, ClientDTO dto) {
+        Client client = repository.getReferenceById(id);
+        convertDtoToEntity(dto, client);
+        client = repository.save(client);
+        return new ClientDTO(client);
+    }
+    
+    
+    private void convertDtoToEntity(ClientDTO dto, Client client) {
         client.setName(dto.getName());
         client.setCpf(dto.getCpf());
         client.setIncome(dto.getIncome());
