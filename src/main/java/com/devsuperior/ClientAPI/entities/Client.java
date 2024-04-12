@@ -2,6 +2,7 @@ package com.devsuperior.ClientAPI.entities;
 
 import jakarta.persistence.*;
 
+import java.sql.Date;
 import java.time.LocalDate;
 import java.util.Objects;
 
@@ -12,6 +13,7 @@ public class Client {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    @Column(unique = true)
     private String cpf;
     private Double income;
     private LocalDate birthDate;
