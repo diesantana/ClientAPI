@@ -1,43 +1,67 @@
-# ClientAPI
+# ClientAPI 
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/diesantana/ClientAPI/blob/main/LICENSE) 
 
-## Sobre o Projeto
-ClientAPI é uma API REST com Spring Boot que fornece um CRUD completo para gerenciar um recurso de clientes. Este projeto utiliza o Spring Data JPA para a persistência de dados, facilitando as operações de banco de dados com o H2 Database.
+# Sobre o projeto
 
-## Funcionalidades
-- **Busca Paginada de Recursos**: Permite a busca paginada de clientes na base de dados.
-- **Busca de Recurso por ID**: Facilita a busca de clientes utilizando seu ID único.
-- **Inserir Novo Recurso**: Possibilita a inserção de novos clientes no banco de dados.
-- **Atualizar Recurso**: Permite a atualização dos dados de clientes existentes.
-- **Deletar Recurso**: Habilita a exclusão de clientes da base de dados.
+ClientAPI é um projeto de desafio feito durante o curso Java Spring Professional da Devsuperior.  
 
-## Validações e Tratamento de Exceções
-O projeto inclui validações significativas para garantir a integridade dos dados dos clientes
+ClientAPI é uma API REST com Spring Boot 3 que fornece um CRUD completo para gerenciar um recurso de clientes. Este projeto utiliza o Spring Data JPA para a persistência de dados, facilitando as operações de banco de dados com o H2 Database.
 
-## Tecnologias Utilizadas
-- **Spring Boot**: Para a criação de web services RESTful.
-- **Spring Data JPA**: Para a persistência de dados e acesso ao banco de dados.
-- **H2 Database**: Como banco de dados para ambiente de testes.
-- **Maven**: Para gerenciamento de dependências.
-- **Java**: Como linguagem de programação.
+## Arquitetura
+O sistema está arquiteturado no padrão Camadas, onde camada camada possui uma responsabilidade específica. 
 
-## Modelo de Dados
-Um cliente possui as seguintes propriedades:
-- Nome
-- CPF
-- Renda
-- Data de Nascimento
-- Quantidade de Filhos
+O Projeto utiliza o padrão de design DTO para o transporte de dados entre diferentes componentes do sistema. 
 
-## Como Executar
-Para executar o projeto localmente, siga estas etapas:
-1. Clone o repositório para sua máquina local.
-2. Abra o projeto em sua IDE preferida.
-3. Configure o banco de dados H2 para testes.
-4. Execute o projeto através da classe principal que contém o método `main`.
+![Modelo Conceitual](https://raw.githubusercontent.com/diesantana/assets/main/img/clientAPI/camadas.jpg)
 
 
-## Licença
-Distribuído sob a licença MIT. Veja `LICENSE` para mais informações.
+## Modelo conceitual
+![Modelo Conceitual](https://raw.githubusercontent.com/diesantana/assets/main/img/clientAPI/Entity%20Client%202.jpg)  
+  
 
-## Contato
-Diego Alves Santana - [3c.santana@gmail.com](mailto:3c.santana@gmail.com)
+# Tecnologias utilizadas
+- Java JDK 21
+- Spring Boot 3
+- Spring Data JPA: Para a persistência de dados e acesso ao banco de dados.
+- Maven: Para gerenciamento de dependências.
+- H2 Database: Como banco de dados para ambiente de testes.
+
+# Como executar o projeto
+
+Pré-requisitos: JDK 21
+
+```bash
+# Clone o repositório
+git clone git@github.com:diesantana/ClientAPI.git
+
+# Navegue até o diretório raiz do projeto e execute o fat jar:
+java -jar target/ClientAPI-0.0.1-SNAPSHOT.jar
+```
+
+**Você também pode baixar o fat jar diretamente deste reposiório, na pasta target.**
+- Salve o arquivo `ClientAPI-0.0.1-SNAPSHOT.jar` na pasta desejada.
+
+**Executar o fat jar:**
+- Navegue até a pasta onde o fat jar foi baixado.
+- Execute o fat jar usando o comando: 
+```
+java -jar ClientAPI-0.0.1-SNAPSHOT.jar
+```
+     
+## Endpoints
+
+Para testar os endpoints da aplicação, recomenda-se o uso do Postman.
+
+- GET `/clients`: Retorna todos os clientes paginados.
+- GET `/clients/{id}`: Retorna um cliente específico pelo ID.
+- POST `/clients`: Cria um novo cliente.
+- PUT `/clients/{id}`: Atualiza um cliente existente pelo ID.
+- DELETE `/clients/{id}`: Deleta um cliente pelo ID.
+
+
+
+# Autor
+Diego Alves Santana
+
+https://www.linkedin.com/in/die-santana
+
