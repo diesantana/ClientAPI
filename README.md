@@ -8,7 +8,7 @@ ClientAPI é um projeto de desafio feito durante o curso Java Spring Professiona
 ClientAPI é uma API REST com Spring Boot 3 que fornece um CRUD completo para gerenciar um recurso de clientes. Este projeto utiliza o Spring Data JPA para a persistência de dados, facilitando as operações de banco de dados com o H2 Database.
 
 ## Arquitetura
-O sistema está arquiteturado no padrão Camadas, onde camada camada possui uma responsabilidade específica. 
+O sistema está arquiteturado no padrão Camadas, onde cada camada possui uma responsabilidade específica. 
 
 O Projeto utiliza o padrão de design DTO para o transporte de dados entre diferentes componentes do sistema. 
 
@@ -20,7 +20,7 @@ O Projeto utiliza o padrão de design DTO para o transporte de dados entre difer
   
 
 # Tecnologias utilizadas
-- Java JDK 21
+- JDK 21
 - Spring Boot 3
 - Spring Data JPA: Para a persistência de dados e acesso ao banco de dados.
 - Maven: Para gerenciamento de dependências.
