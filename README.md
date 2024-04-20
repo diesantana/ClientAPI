@@ -35,10 +35,10 @@ Pré-requisitos: JDK 21
 git clone git@github.com:diesantana/ClientAPI.git
 
 # Navegue até o diretório raiz do projeto e execute o fat jar:
-java -jar target/ClientAPI-0.0.1-SNAPSHOT.jar
+java -jar ClientAPI-0.0.1-SNAPSHOT.jar
 ```
 
-**Você também pode baixar o fat jar diretamente deste reposiório, na pasta target.**
+**Você também pode baixar o fat jar diretamente deste reposiório.**
 - Salve o arquivo `ClientAPI-0.0.1-SNAPSHOT.jar` na pasta desejada.
 
 **Executar o fat jar:**
